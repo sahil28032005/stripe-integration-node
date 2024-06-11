@@ -1,16 +1,6 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 
 const Checkout = () => {
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://js.stripe.com/v3/';
-        script.async = true;
-        document.body.appendChild(script);
-
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, []);
     return (
         <>
             <section>
