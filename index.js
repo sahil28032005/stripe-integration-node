@@ -1,8 +1,13 @@
 const stripe = require('stripe')('sk_test_51OzNzKSBG9MAmZLJVIIyi4Lv8x8Udr795atNPAWyRMzu0dlzJGakYZEyXOw0UjfLiPwRQi28Hyivy9S4jhrWnkVk00kcIdp0tL');
 const express = require('express');
+var cors = require('cors');
 const app = express();
 const YOUR_DOMAIN = 'http://localhost:4242';
+
+//middlewares
+app.use(cors());
 app.use(express.static('public'));//middleware to serve static checkout pages
+
 app.get("/", (req, res) => {
     res.status(201).send({
         success: 'true',
